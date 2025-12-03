@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FocusLog - Minimalist Timer & Learning Log</title>
+    <link rel="stylesheet" href="focuslog.css">
+</head>
+<body>
+    <!-- Home Page -->
+    <div class="container home-page">
+        <div class="hero">
+            <h1>FocusLog</h1>
+            <p>Minimalist timer & learning log for hackers.</p>
+        </div>
+
+        <div class="timer-container">
+            <div class="timer-input">
+                <input type="text" id="topic-input" placeholder="What are you learning today?" />
+                <button id="start-button" disabled>START</button>
+            </div>
+        </div>
+
+        <div class="history-container">
+            <div class="history-header">
+                <h2>History</h2>
+                <a href="#" id="view-all-link">View All</a>
+            </div>
+            <div class="log-cards" id="home-log-cards">
+                <!-- Log cards will be generated here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Focus Mode -->
+    <div class="focus-mode" id="focus-mode">
+        <div class="focus-header">
+            <div class="focus-topic" id="focus-topic"></div>
+            <div class="focus-time" id="focus-time"></div>
+        </div>
+        <div class="focus-timer" id="focus-timer">00:00:00</div>
+        <div class="focus-controls">
+            <button id="pause-button">PAUSE</button>
+            <button id="abort-button" class="btn-danger">ABORT</button>
+            <button id="done-button" class="btn-primary">DONE</button>
+        </div>
+    </div>
+
+    <!-- Review Modal -->
+    <div class="review-modal" id="review-modal">
+        <div class="review-content">
+            <h2 class="review-title">Review Your Learning</h2>
+            <p>Use Feynman Technique to summarize what you've learned:</p>
+            <textarea class="review-textarea" id="review-textarea" placeholder="Write your notes in Markdown format..."></textarea>
+            <div class="review-controls">
+                <button id="cancel-review" class="btn-secondary">CANCEL</button>
+                <button id="save-review" class="btn-primary">SAVE</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- History Page -->
+    <div class="container history-page" id="history-page">
+        <div class="history-nav">
+            <a href="#" id="back-to-home">FocusLog | History</a>
+        </div>
+
+        <div class="history-list" id="history-list">
+            <!-- History items will be generated here -->
+        </div>
+
+        <div class="pagination">
+            <button id="prev-page" disabled>Previous</button>
+            <div class="pagination-info" id="pagination-info">Page 1 of 1</div>
+            <button id="next-page" disabled>Next</button>
+        </div>
+    </div>
+
+    <!-- Detail Page -->
+    <div class="container detail-page" id="detail-page">
+        <div class="history-nav">
+            <a href="#" id="back-to-history">FocusLog | Detail</a>
+        </div>
+
+        <div class="detail-content" id="detail-content">
+            <!-- Detail content will be generated here -->
+        </div>
+
+        <div class="detail-footer">
+            <a href="#" id="back-to-history-bottom">Back to History</a>
+        </div>
+    </div>
+
+    <script src="focuslog.js"></script>
+</body>
+</html>

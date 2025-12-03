@@ -1,0 +1,517 @@
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: #000000;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+h2 {
+    font-size: 20px;
+    margin-bottom: 16px;
+}
+
+/* Layout */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 32px 16px;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 32px;
+    padding: 32px 16px;
+    border-bottom: 1px solid #000;
+}
+
+.hero h1 {
+    margin-bottom: 8px;
+}
+
+.hero p {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Timer Input */
+.timer-container {
+    margin-bottom: 48px;
+}
+
+.timer-input {
+    display: flex;
+    gap: 0;
+}
+
+.timer-input input {
+    flex-grow: 1;
+    height: 48px;
+    padding: 0 16px;
+    border: 1px solid #000;
+    font-family: Menlo, Monaco, 'Courier New', monospace;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s linear;
+}
+
+.timer-input input:focus {
+    border-color: #0066cc;
+}
+
+.timer-input button {
+    width: 120px;
+    height: 48px;
+    background: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-family: Menlo, Monaco, 'Courier New', monospace;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+.timer-input button:hover {
+    background: #333;
+}
+
+.timer-input button:disabled {
+    background: #999;
+    cursor: not-allowed;
+}
+
+/* History Section */
+.history-container {
+    margin-top: 48px;
+}
+
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.history-header a {
+    color: #0066cc;
+    text-decoration: none;
+    font-family: Menlo, Monaco, 'Courier New', monospace;
+    font-size: 14px;
+}
+
+.history-header a:hover {
+    text-decoration: underline;
+}
+
+.log-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+.log-card {
+    border: 1px solid #000;
+    padding: 16px;
+    background: #f7f7f7;
+    font-family: Menlo, Monaco, 'Courier New', monospace;
+    font-size: 13px;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+}
+
+.log-card:hover {
+    border-color: #0066cc;
+}
+
+.log-header {
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.log-title {
+    color: #000;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.log-meta {
+    display: flex;
+    justify-content: space-between;
+    color: #777;
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+.log-content {
+    white-space: pre-wrap;
+    max-height: 60px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 32px 16px;
+    border: 1px dashed #ccc;
+    color: #777;
+}
+
+/* Focus Mode */
+.focus-mode {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    display: none;
+}
+
+.focus-header {
+    height: 40px;
+    background: #000;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+    font-family: Menlo, Monaco, 'Courier New', monospace;
+    font-size: 14px;
+}
+
+.focus-topic {
+    max-width: 60%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.focus-time {
+    font-size: 12px;
+}
+
+.focus-timer {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Menlo, Monaco, 'Courier New', monospace;
+    font-size: 72px;
+    font-weight: 900;
+    color: #000;
+}
+
+.focus-controls {
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    padding: 0 16px 16px;
+}
+
+.focus-controls button {
+    height: 44px;
+    padding: 0 16px;
+    background: #fff;
+    border: 1px solid #000;
+    cursor: pointer;
+    font-family: Menlo, Monaco, 'Courier New', monospace;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+.focus-controls button:hover {
+    background: #f0f0f0;
+}
+
+.focus-controls .btn-primary {
+    background: #000;
+    color: #fff;
+}
+
+.focus-controls .btn-primary:hover {
+    background: #333;
+}
+
+.focus-controls .btn-danger {
+    border-color: #cc0000;
+    color: #cc0000;
+}
+
+.focus-controls .btn-danger:hover {
+    background: #fff0f0;
+}
+
+/* Review Modal */
+.review-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    display: none;
+}
+
+.review-content {
+    width: 600px;
+    max-width: 90%;
+    background: #fff;
+    border: 1px solid #000;
+    padding: 24px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.review-title {
+    margin-bottom: 16px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.review-textarea {
+    width: 100%;
+    height: 300px;
+    padding: 12px;
+    border: 1px solid #000;
+    font-family: Menlo, Monaco, 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.7;
+    resize: vertical;
+    margin-bottom: 16px;
+    color: #000;
+    background-color: #fff;
+}
+
+.review-controls {
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+}
+
+.review-controls button {
+    height: 44px;
+    padding: 0 16px;
+    background: #fff;
+    border: 1px solid #000;
+    cursor: pointer;
+    font-family: Menlo, Monaco, 'Courier New', monospace;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+.review-controls button:hover {
+    background: #f0f0f0;
+}
+
+.review-controls .btn-primary {
+    background: #000;
+    color: #fff;
+}
+
+.review-controls .btn-primary:hover {
+    background: #333;
+}
+
+/* History Page */
+.history-page {
+    display: none;
+}
+
+.history-nav {
+    margin-bottom: 32px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #000;
+}
+
+.history-nav a {
+    color: #0066cc;
+    text-decoration: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 16px;
+}
+
+.history-nav a:hover {
+    text-decoration: underline;
+}
+
+.history-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+.pagination {
+    margin-top: 32px;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.pagination button {
+    height: 36px;
+    padding: 0 16px;
+    background: #fff;
+    border: 1px solid #000;
+    cursor: pointer;
+    font-family: Menlo, Monaco, 'Courier New', monospace;
+    font-size: 14px;
+}
+
+.pagination button:disabled {
+    background: #f0f0f0;
+    color: #999;
+    cursor: not-allowed;
+}
+
+.pagination-info {
+    display: flex;
+    align-items: center;
+    font-family: Menlo, Monaco, 'Courier New', monospace;
+    font-size: 14px;
+}
+
+/* Detail Page */
+.detail-page {
+    display: none;
+}
+
+.detail-content {
+    border: 1px solid #000;
+    padding: 24px;
+    background: #fff;
+    margin-bottom: 32px;
+}
+
+.detail-header {
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #eee;
+}
+
+.detail-title {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.detail-meta {
+    display: flex;
+    justify-content: space-between;
+    color: #777;
+    font-family: Menlo, Monaco, 'Courier New', monospace;
+    font-size: 14px;
+}
+
+.detail-body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    line-height: 1.7;
+}
+
+.detail-body pre,
+.detail-body code {
+    font-family: Menlo, Monaco, 'Courier New', monospace;
+    font-size: 14px;
+    background: #f7f7f7;
+    padding: 2px 4px;
+    border-radius: 0;
+}
+
+.detail-body pre {
+    padding: 16px;
+    overflow-x: auto;
+    margin: 16px 0;
+}
+
+.detail-body p {
+    margin-bottom: 16px;
+}
+
+.detail-body h1,
+.detail-body h2,
+.detail-body h3 {
+    margin-top: 24px;
+    margin-bottom: 16px;
+}
+
+.detail-body ul,
+.detail-body ol {
+    margin-left: 24px;
+    margin-bottom: 16px;
+}
+
+.detail-footer {
+    margin-top: 32px;
+    text-align: center;
+}
+
+.detail-footer a {
+    color: #0066cc;
+    text-decoration: none;
+    font-family: Menlo, Monaco, 'Times New Roman', Times, serif;
+    font-size: 14px;
+}
+
+.detail-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .timer-input {
+        flex-direction: column;
+    }
+
+    .timer-input input {
+        width: 100%;
+    }
+
+    .timer-input button {
+        width: 100%;
+    }
+
+    .focus-timer {
+        font-size: 48px;
+    }
+
+    .review-content {
+        width: 90%;
+    }
+
+    .focus-controls {
+        flex-direction: column;
+        height: auto;
+        gap: 8px;
+    }
+
+    .focus-controls button {
+        width: 100%;
+    }
+}
+
+

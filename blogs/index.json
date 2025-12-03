@@ -1,0 +1,22 @@
+{
+  "records": [
+    {
+      "id": "2024-01-js-closures",
+      "topic": "JavaScript Closures",
+      "start": "2024-01-01T09:00:00.000Z",
+      "end": "2024-01-01T10:00:00.000Z",
+      "durationSeconds": 3600,
+      "markdownPath": "blogs/2024-01-js-closures.md"
+    },
+    {
+      "id": "2024-01-python-decorators",
+      "topic": "Python Decorators",
+      "start": "2024-01-02T13:00:00.000Z",
+      "end": "2024-01-02T14:15:00.000Z",
+      "durationSeconds": 4500,
+      "markdownPath": "blogs/2024-01-python-decorators.md"
+    }
+  ]
+}
+
+
